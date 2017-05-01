@@ -158,18 +158,8 @@ class circleUtils {
         canvas.drawBitmap(bitmap, x, y, null);
 
         Paint p = new Paint();
-
-        // Set paint color according to view color to make it always visible
-        double darkness = 1 - (0.299 * Color.red(circleColor) + 0.587 * Color.green(circleColor) + 0.114 * Color.blue(circleColor)) / 255;
-
-        if (darkness < 0.5) {
-
-            b1 = BitmapFactory.decodeResource(mResources, R.drawable.ic_delete_forever_black_24dp);
-
-        } else {
-            b1 = BitmapFactory.decodeResource(mResources, R.drawable.ic_delete_forever_white_24dp);
-
-        }
+        
+        b1 = BitmapFactory.decodeResource(mResources, R.drawable.ic_delete_forever_white_24dp);
 
         //image size follow the circle radius
         Bitmap b2 = getResizedBitmap(b1, bitmapSquare / 2, bitmapSquare / 2);
